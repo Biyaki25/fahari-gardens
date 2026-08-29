@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Leaf, MapPin, Phone, Mail, Facebook, Instagram, Twitter } from 'lucide-react'
+import { Leaf, MapPin, Phone, Mail, MessageCircle, Facebook, Instagram, Twitter } from 'lucide-react'
 import { useState } from 'react'
+import { buildWhatsAppLink, WHATSAPP_DISPLAY } from '../data/contact.js'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -62,8 +63,19 @@ export default function Footer() {
               <a href="tel:+254700000000" className="hover:text-gold-light transition-colors">+254 700 000 000</a>
             </li>
             <li className="flex gap-2.5">
+              <MessageCircle className="w-5 h-5 shrink-0 text-[#25D366]" />
+              <a
+                href={buildWhatsAppLink()}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-gold-light transition-colors"
+              >
+                WhatsApp: {WHATSAPP_DISPLAY}
+              </a>
+            </li>
+            <li className="flex gap-2.5">
               <Mail className="w-5 h-5 shrink-0 text-gold-light" />
-              <a href="mailto:reservations@fahari-gardens.com" className="hover:text-gold-light transition-colors">reservations@fahari-gardens.com</a>
+              <a href="mailto:danielnyamongo704@gmail.com" className="hover:text-gold-light transition-colors">danielnyamongo704@gmail.com</a>
             </li>
           </ul>
         </div>
