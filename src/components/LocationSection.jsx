@@ -44,7 +44,7 @@ export default function LocationSection() {
               <Mail className="w-5 h-5 text-clay shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-forest-dark text-sm">Email</p>
-                <a href="mailto:reservations@fahari-gardens.com" className="text-sm text-charcoal/65 hover:text-clay">reservations@fahari-gardens.com</a>
+                <a href="mailto:danielnyamongo704@gmail.com" className="text-sm text-charcoal/65 hover:text-clay">danielnyamongo704@gmail.com</a>
               </div>
             </div>
           </div>
