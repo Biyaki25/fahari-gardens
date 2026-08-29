@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2 } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, MessageCircle } from 'lucide-react'
+import { buildWhatsAppLink, WHATSAPP_DISPLAY } from '../data/contact.js'
 
 export default function Contact() {
   const [form, setForm] = useState({ fullName: '', email: '', phone: '', subject: '', message: '' })
@@ -97,9 +98,18 @@ export default function Contact() {
               <ul className="space-y-4 text-sm text-charcoal/70">
                 <li className="flex gap-3"><MapPin className="w-5 h-5 text-clay shrink-0" /> 0100 Road D, Upendo Close, Utawala, Nairobi, Kenya</li>
                 <li className="flex gap-3"><Phone className="w-5 h-5 text-clay shrink-0" /> <a href="tel:+254700000000" className="hover:text-clay">+254 700 000 000</a></li>
-                <li className="flex gap-3"><Mail className="w-5 h-5 text-clay shrink-0" /> <a href="mailto:reservations@fahari-gardens.com" className="hover:text-clay">reservations@fahari-gardens.com</a></li>
+                <li className="flex gap-3"><MessageCircle className="w-5 h-5 text-[#25D366] shrink-0" /> <a href={buildWhatsAppLink('Hello Fahari Gardens, I have a question for your team.')} target="_blank" rel="noreferrer" className="hover:text-clay">WhatsApp: {WHATSAPP_DISPLAY}</a></li>
+                <li className="flex gap-3"><Mail className="w-5 h-5 text-clay shrink-0" /> <a href="mailto:danielnyamongo704@gmail.com" className="hover:text-clay">danielnyamongo704@gmail.com</a></li>
                 <li className="flex gap-3"><Clock className="w-5 h-5 text-clay shrink-0" /> Reception open 24 hours</li>
               </ul>
+              <a
+                href={buildWhatsAppLink('Hello Fahari Gardens, I would like to speak with your team.')}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-forest mt-6 w-full text-sm"
+              >
+                <MessageCircle className="w-4 h-4" /> Chat with us on WhatsApp
+              </a>
             </div>
             <div className="rounded-md overflow-hidden shadow-card h-64">
               <iframe
